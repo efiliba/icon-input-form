@@ -1,0 +1,35 @@
+<form autocomplete="off" novalidate (ngSubmit)="onSubmit(userForm)" [formGroup]="userForm">
+  <label>
+    <span>Full name</span>
+    <icon-input icon="user" [ngClass]="{error: nameHasRequiredError || nameHasMinLengthError}">
+      <input type="text" placeholder="Name" formControlName="name" />
+      <div class="error" *ngIf="nameHasRequiredError">Name required</div>
+      <div class="error" *ngIf="nameHasMinLengthError">2 character minimum</div>
+    </icon-input>
+  </label>
+  <div formGroupName="contact">
+    <label>
+      <span>Email address</span>
+      <icon-input icon="envelope" [ngClass]="{error: emailHasRequiredError}">
+        <input type="email" placeholder="Email" formControlName="email" />
+        <div class="error" *ngIf="emailHasRequiredError">Email required</div>
+      </icon-input>
+    </label>
+    <label>
+      <span>Confirm email address</span>
+      <icon-input icon="copy" [ngClass]="{error: confirmEmailHasRequiredError || emailsHaveUnmatchedError}">
+        <input type="email" placeholder="Confirm email" formControlName="confirm" />
+        <div class="error" *ngIf="confirmEmailHasRequiredError">Confirming email required</div>
+        <div class="error" *ngIf="emailsHaveUnmatchedError">Email addresses do not match</div>
+      </icon-input>
+    </label>
+  </div>
+
+  <button type="button" (click)="onPopulate()">Populate</button>
+  <button type="button" (click)="onReset()">Reset</button>
+  <button type="submit" [disabled]="userForm.invalid">Submit</button>
+</form>
+
+<div class="debug">
+  {{ formData | json }}
+</div>

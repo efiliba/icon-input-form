@@ -1,0 +1,41 @@
+.icon {
+  width: 2rem;
+  text-align: center;
+  padding-left: 0.5rem;
+  padding-right: 0.2rem;
+  border: none;
+}
+
+:host {
+  display: inline-block;
+}
+
+:host(.input-focus) {
+  border-color: #129FEA;
+  outline: none;
+  box-shadow: 0 0 5px rgba(102, 175, 233, 0.6);
+  -webkit-box-shadow: 0 0 5px rgba(102, 175, 233, 0.6);
+}
+
+:host /deep/ input {
+  border: none;
+  outline: none;
+  height: 100%;
+  box-sizing: border-box;
+  width: 88%;
+}
+
+:host /deep/ {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+:host /deep/ .error {
+  font-size: 1rem;
+  color: #c7254e;
+  background: #f9f2f4;
+  border-radius: .2rem;
+  padding: .5rem;
+  margin-top: .4rem;
+}
