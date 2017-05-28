@@ -27,11 +27,11 @@ export class AppComponent implements OnInit {
         email: ['', Validators.required],
         confirm: ['', Validators.required]
       }, {
-        validator: confirmValues(['email'], ['confirm'], 'emailsMatch')
+        validator: confirmValues('email', 'confirm', 'emailsMatch')
       })
     });
 
-    this.nameControl = this.userForm.get('name');
+    this.nameControl = this.userForm.controls.name;
     this.emailControl = this.userForm.get('contact').get('email');;
     this.confirmControl = this.userForm.get('contact').get('confirm');
 

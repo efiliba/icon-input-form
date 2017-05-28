@@ -1,4 +1,4 @@
-import { Component, AfterContentInit, Input, ContentChild, HostBinding, ViewChildren, QueryList } from '@angular/core';
+import { Component, AfterContentInit, Input, ContentChild, HostBinding } from '@angular/core';
 import { InputRefDirective } from "../common/input-ref.directive";
 
 @Component({
@@ -11,8 +11,6 @@ export class IconInputComponent implements AfterContentInit {
   @Input() icon: string;
   @ContentChild(InputRefDirective) input: HTMLInputElement;
 
-  constructor() { }
-  
   ngAfterContentInit() {
     if (!this.input) {
       console.error('icon-input requires a nested input element');

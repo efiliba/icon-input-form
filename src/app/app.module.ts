@@ -19,7 +19,7 @@ import { ShowOneDirective } from './tabs/show-one.directive';
     TabsComponent,
     ShowOneTriggerDirective,
     ShowOneContainerDirective,
-    ShowOneDirective,
+    ShowOneDirective
   ],
   imports: [
     BrowserModule,
